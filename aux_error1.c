@@ -50,12 +50,12 @@ char *error_get_cd(data_shell *datash)
 	ver_str = aux_itoa(datash->counter);
 	if (datash->args[1][0] == '-')
 	{
-		msg = ": Illegal option ";
+		msg = ": Option unavailable ";
 		len_id = 2;
 	}
 	else
 	{
-		msg = ": can't cd to ";
+		msg = ": unable to cd ";
 		len_id = _strlen(datash->args[1]);
 	}
 
@@ -134,7 +134,7 @@ char *error_exit_shell(data_shell *datash)
 	_strcat(error, ver_str);
 	_strcat(error, ": ");
 	_strcat(error, datash->args[0]);
-	_strcat(error, ": Illegal number: ");
+	_strcat(error, ": Number unavailable: ");
 	_strcat(error, datash->args[1]);
 	_strcat(error, "\n\0");
 	free(ver_str);
